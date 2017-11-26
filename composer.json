@@ -1,0 +1,34 @@
+{
+  "name": "adesigns/nppes-api",
+  "type": "library",
+  "description": "PHP Library to interact with the NPPES NPI Registry API",
+  "keywords": [
+    "pdf",
+    "thumbnail",
+    "snapshot",
+    "knplabs",
+    "knp",
+    "wkhtmltopdf"
+  ],
+  "homepage": "http://github.com/adesigns/nppes-api",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Albany Designs Team",
+      "homepage": "http://www.albanydesigns.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "tcdent/php-restclient": "^0.1.7",
+    "netresearch/jsonmapper": "^1.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8.36"
+  },
+  "autoload": {
+    "psr-0": {
+      "AlbanyDesigns\\": "src/"
+    }
+  }
+}
