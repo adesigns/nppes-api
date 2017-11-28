@@ -16,7 +16,7 @@ class NPPESApi implements NPPESApiInterface
     {
         $this->apiClient = new RestClient([
             'base_url' => self::BASE_URL,
-            'curl_options' => [CURLOPT_SSL_VERIFYPEER => (int) $verifySsl, CURLOPT_SSL_VERIFYHOST => (int) $verifySsl]
+            'curl_options' => [CURLOPT_SSL_VERIFYPEER => (int) $verifySsl === true ? 1 : 0, CURLOPT_SSL_VERIFYHOST => $verifySsl === true ? 2 : 0]
         ]);
     }
 
