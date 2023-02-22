@@ -18,8 +18,10 @@ interface NPPESApiInterface
 
     /**
      * @param array $parameters Search based on allowed parameters in the NPI Registry (https://npiregistry.cms.hhs.gov/api/demo)
+     * @param int|null $limit The number of results to return.
+     * @param string|null $version The API version to use.  Everything before 2.1 is deprecated.
      * @return ApiResponse
      */
-    public function search($parameters);
+    public function search(array $parameters, ?int $limit = 20, ?string $version = '2.1');
 
 }

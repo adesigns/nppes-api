@@ -2,7 +2,6 @@
 namespace AlbanyDesigns\NPPESApi;
 
 use AlbanyDesigns\NPPESApi\Entity\ApiResponse;
-use AlbanyDesigns\NPPESApi\Entity\Provider;
 use JsonMapper;
 use RestClient;
 
@@ -21,10 +20,7 @@ class NPPESApi implements NPPESApiInterface
     }
 
     /**
-     * Search for a single provider by NPI Number
-     *
-     * @param $number
-     * @return Provider|null Returns a Provider if one is found by the number, otherwise null
+     * @inheritDoc
      */
     public function searchByNumber($number)
     {
@@ -40,11 +36,20 @@ class NPPESApi implements NPPESApiInterface
     }
 
     /**
-     * @param array $parameters Search based on allowed parameters in the NPI Registry (https://npiregistry.cms.hhs.gov/api/demo)
-     * @return ApiResponse
+     * @inheritDoc
      */
-    public function search($parameters)
+    public function search(array $parameters, ?int $limit = 10, ?string $version = '2.1')
     {
+        // backwards compatibility
+        if (empty($parameters['version'])) {
+            $parameters['version'] = $version;
+        }
+
+        // backwards compatibility
+        if (empty($parameters['limit'])) {
+            $parameters['limit'] = $limit;
+        }
+
         return $this->handleResponse($this->apiClient->get("", $parameters));
     }
 
