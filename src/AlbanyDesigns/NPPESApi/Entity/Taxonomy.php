@@ -3,59 +3,47 @@ namespace AlbanyDesigns\NPPESApi\Entity;
 
 class Taxonomy
 {
-    /**
-     * @var string
-     */
-    private $state;
+    private ?string $state = null;
 
-    /**
-     * @var string
-     */
-    private $code;
+    private ?string $code = null;
 
     /**
      * @var boolean
      */
-    private $primary;
+    private bool $primary = false;
+
+    private ?string $license = null;
+
+    private ?string $desc = null;
 
     /**
-     * @var string
+     * @return string|null
      */
-    private $license;
-
-    /**
-     * @var string
-     */
-    private $desc;
-
-    /**
-     * @return string
-     */
-    public function getState()
+    public function getState(): ?string
     {
         return $this->state;
     }
 
     /**
-     * @param string $state
+     * @param string|null $state
      */
-    public function setState($state)
+    public function setState(?string $state): void
     {
         $this->state = $state;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCode()
+    public function getCode(): ?string
     {
         return $this->code;
     }
 
     /**
-     * @param string $code
+     * @param string|null $code
      */
-    public function setCode($code)
+    public function setCode(?string $code): void
     {
         $this->code = $code;
     }
@@ -63,7 +51,7 @@ class Taxonomy
     /**
      * @return bool
      */
-    public function isPrimary()
+    public function isPrimary(): bool
     {
         return $this->primary;
     }
@@ -71,40 +59,42 @@ class Taxonomy
     /**
      * @param bool $primary
      */
-    public function setPrimary($primary)
+    public function setPrimary(bool $primary): void
     {
         $this->primary = $primary;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLicense()
+    public function getLicense(): ?string
     {
         return $this->license;
     }
 
     /**
-     * @param string $license
+     * @param string|null $license
      */
-    public function setLicense($license)
+    public function setLicense(?string $license): void
     {
         $this->license = $license;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDesc()
+    public function getDesc(): ?string
     {
         return $this->desc;
     }
 
     /**
-     * @param string $desc
+     * @param string|null $desc
      */
-    public function setDesc($desc)
+    public function setDesc(?string $desc): void
     {
         $this->desc = $desc;
     }
+
+
 }
