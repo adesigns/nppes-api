@@ -32,7 +32,7 @@ class ProviderBasic
     /**
      * @var string
      */
-    private $name;
+    private $organizationName;
 
     /**
      * @var string
@@ -137,17 +137,17 @@ class ProviderBasic
     /**
      * @return string
      */
-    public function getName()
+    public function getOrganizationName()
     {
-        return $this->name;
+        return $this->organizationName;
     }
 
     /**
-     * @param string $name
+     * @param string $organizationName
      */
-    public function setName($name)
+    public function setOrganizationName($organizationName)
     {
-        $this->name = $name;
+        $this->organizationName = $organizationName;
     }
 
     /**
