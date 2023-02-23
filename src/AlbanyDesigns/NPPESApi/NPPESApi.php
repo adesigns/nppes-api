@@ -24,11 +24,9 @@ class NPPESApi implements NPPESApiInterface
      */
     public function searchByNumber($number)
     {
-        $apiRequest = $this->apiClient->get("", ['number' => $number]);
+        $response = $this->search(['number' => $number], 1);
 
-        $response = $this->handleResponse($apiRequest);
-
-        if ($response->getResultCount() == 1) {
+        if ($response->getResultCount()) {
             return $response->getResults()[0];
         }
 
